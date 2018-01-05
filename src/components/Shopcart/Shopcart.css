@@ -1,0 +1,90 @@
+.shopcart {
+  width: 100%;
+  height: 51px;
+  background-color: #443f43;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.shopcart.highlight {
+  background-color: #2d2b2a;
+}
+
+.shopcart .content-left {
+  flex: 1;
+}
+
+.shopcart .content-left .logo-wrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #666666;
+  border-radius: 50%;
+  position: relative;
+  top: -14px;
+  left: 10px;
+  text-align: center;
+  float: left
+}
+
+.shopcart .content-left .logo-wrapper.highlight {
+  background-color: #ffd161;
+}
+
+.shopcart .content-left .logo-wrapper .logo {
+  font-size: 28px;
+  color: #c4c4c4;
+  line-height: 50px;
+}
+
+.shopcart .content-left .logo-wrapper .logo.highlight {
+  color: #2D2B2A;
+}
+
+.shopcart .content-left .logo-wrapper .num {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.desc-wrapper {
+  float: left;
+  margin-left: 13px;
+}
+
+.desc-wrapper .total-price {
+  font-size: 18px;
+  line-height: 33px;
+  color: white;
+}
+
+.shopcart .content-left .desc-wrapper .tip {
+  font-size: 12px;
+  color: #bab9b9;
+  line-height: 51px;
+}
+
+.shopcart .content-left .desc-wrapper .tip.highlight {
+  line-height: 12px;
+}
+
+.shopcart .content-right {
+  flex: 0 0 110px;
+  text-align: center;
+  font-size: 15px;
+  color: #bab9b9;
+  line-height: 51px;
+}
+
+.shopcart .content-right.highlight {
+  background-color: #FFD161;
+  color: #2D2B2A;
+}

@@ -301,6 +301,7 @@ export default {
     top: 0;
     left: 0;
     background-color: rgba(98, 98, 98, 0.8);
+    z-index: 5;
 }
 
 .header .bulletin-detail .detail-wrapper {
