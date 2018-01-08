@@ -9,11 +9,12 @@
               {{container.tag_name}}
             </p>
           </li>
-          <li class="menu-item" v-for="(item,index) in goods" :class="{'current': currentIndex === index + 1}" @click="selectMenu(index + 1)">
+          <li class="menu-item" v-for="(item,index) in goods" :key="index" :class="{'current': currentIndex === index + 1}" @click="selectMenu(index + 1)">
             <p class="text">
               <img :src="item.icon" v-if="item.icon" class="icon">
               {{item.name}}
             </p>
+            <i class="num" v-show="selectFoodTypeNum(item.spus)">{{selectFoodTypeNum(item.spus)}}</i>
           </li>
         </ul>
       </div>
@@ -23,17 +24,17 @@
         <ul>
           <!-- 專場 -->
           <li class="container-list food-list-hook">
-            <div v-for="item in container.operation_source_list">
+            <div v-for="(item,key) in container.operation_source_list" :key="key">
               <img :src="item.pic_url">
             </div>
           </li>
 
           <!-- 具體分類 -->
-          <li class="food-list food-list-hook" v-for="item in goods">
+          <li class="food-list food-list-hook" v-for="(item,key) in goods" :key="key">
             <!-- 商品列表 -->
             <h3 class="title">{{item.name}}</h3>
             <ul>
-              <li class="food-item" v-for="food in item.spus">
+              <li class="food-item" v-for="(food,key) in item.spus" :key="key">
                 <div class="icon" :style="head_bg(food.picture)"></div>
                 <div class="content">
                   <h3 class="name">{{food.name}}</h3>
@@ -48,18 +49,22 @@
                     <span class="unit">/{{food.unit}}</span>
                   </p>
                 </div>
+                <div class="cartcontrol-wrap">
+                    <Cartcontrol :food="food"></Cartcontrol>
+                </div>
               </li>
             </ul>
           </li>
         </ul>
       </div>
 
-      <Shopcart :shippingTip="poiInfo.shipping_fee_tip" :minPrice="poiInfo.min_price_tip"></Shopcart>
+      <Shopcart :selectFoods="selectFoods" :poiInfo="poiInfo"></Shopcart>
   </div>
 </template>
 <script>
 import BScroll from "better-scroll";
 import Shopcart from "components/Shopcart/Shopcart";
+import Cartcontrol from "components/Cartcontrol/Cartcontrol";
 export default {
     data() {
         return {
@@ -73,7 +78,8 @@ export default {
         };
     },
     components: {
-        Shopcart
+        Shopcart,
+        Cartcontrol
     },
     created() {
         this.$axios
@@ -114,7 +120,8 @@ export default {
             });
             this.foodScroll = new BScroll(this.$refs.foodScroll, {
                 //当 probeType 为 3 的时候，不仅在屏幕滑动的过程中，而且在 momentum 滚动动画运行过程中实时派发 scroll 事件
-                probeType: 3
+                probeType: 3,
+                click: true
             });
 
             //添加監聽事件
@@ -154,6 +161,16 @@ export default {
 
             //滾動到對應位置
             this.foodScroll.scrollToElement(el, 250);
+        },
+
+        selectFoodTypeNum(spus) {
+            let count = 0;
+            spus.forEach(food => {
+                if (food.count > 0) {
+                    count += food.count;
+                }
+            });
+            return count;
         }
     },
 
@@ -175,6 +192,18 @@ export default {
             }
 
             return 0;
+        },
+
+        selectFoods() {
+            let foods = [];
+            this.goods.forEach(good => {
+                good.spus.forEach(food => {
+                    if (food.count > 0) {
+                        foods.push(food);
+                    }
+                });
+            });
+            return foods;
         }
     }
 };
