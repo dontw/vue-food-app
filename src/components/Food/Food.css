@@ -1,0 +1,208 @@
+.food {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 51px;
+  background-color: #fff;
+  width: 100%;
+  z-index: 5;
+}
+
+.detail-enter-active,
+.detail-leave-active {
+  transition: all 0.5s;
+}
+
+.detail-enter,
+.detail-leave-to {
+  transform: translateX(100%);
+}
+
+.food-content .img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  /* 
+  在定位中 padding-top or padding-bototm設置為%
+  box-model高度會根據寬度進行計算
+  */
+  padding-top: 100%;
+}
+
+.img-wrapper .food-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.close-bt {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  background-color: #7f7f7f;
+  border-radius: 50%;
+}
+
+.share-bt,
+.more-bt {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+}
+
+.more-bt {
+  right: 50px;
+}
+
+.share-bt {
+  right: 10px;
+}
+
+.food-content .content-wrapper {
+  padding: 0 0 16px 16px;
+  position: relative;
+}
+
+.food-content .content-wrapper .name {
+  font-size: 15px;
+  color: #333333;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.food-content .content-wrapper .saled {
+  font-size: 11px;
+  color: #9d9d9d;
+  margin-bottom: 6px;
+}
+
+.food-content .content-wrapper .product {
+  height: 15px;
+  margin-bottom: 16px;
+}
+
+.food-content .content-wrapper .price {
+  font-size: 0;
+}
+
+.food-content .content-wrapper .price .text {
+  color: #fb4144;
+  font-size: 17px;
+}
+
+.food-content .content-wrapper .price .unit {
+  font-size: 11px;
+  color: #9d9d9d;
+}
+
+.food-content .cartcontrol-wrapper {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  padding: 2px;
+}
+
+.food-content .buy {
+  width: 64px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #FFD161;
+  border-radius: 30px;
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+}
+
+.rating-wrapper {
+  padding-left: 16px;
+}
+
+.rating-wrapper .rating-title {
+  padding: 16px 16px 16px 0;
+}
+
+.rating-wrapper .rating-title .like-ratio {
+  float: left;
+  font-size: 0;
+}
+
+.rating-wrapper .rating-title .like-ratio .title {
+  font-size: 13px;
+}
+
+.rating-wrapper .rating-title .like-ratio .ratio {
+  font-size: 11px;
+}
+
+.rating-wrapper .rating-title .like-ratio .ratio i {
+  color: #FB4e44;
+  font-size: 11px;
+}
+
+.rating-wrapper .rating-title .snd-title {
+  float: right;
+  font-size: 0;
+}
+
+.rating-wrapper .rating-title .snd-title .text,
+.rating-wrapper .rating-title .snd-title .icon {
+  font-size: 13px;
+  color: #909090;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.rating-comment {
+  padding: 15px 14px 17px 0;
+  border-bottom: 1px solid #f4f4f4;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.comment-header {
+  flex: 0 0 41px;
+  margin-right: 10px;
+}
+
+.comment-header img {
+  border-radius: 50%;
+  width: 41px;
+  height: 41px;
+}
+
+.comment-main {
+  flex: 1;
+  margin-top: 6px;
+}
+
+.comment-main .user {
+  width: 50%;
+  float: left;
+  font-size: 12px;
+  color: #333333;
+}
+
+.comment-main .time {
+  width: 50%;
+  float: right;
+  text-align: right;
+  font-size: 10px;
+  color: #666;
+}
+
+.comment-main .content {
+  margin-top: 17px;
+  font-size: 13px;
+  line-height: 19px;
+}
