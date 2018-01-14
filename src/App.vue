@@ -5,7 +5,7 @@
     <my-header :poiInfo="poiInfo"></my-header>
 
     <!-- nav -->
-    <my-nav></my-nav>
+    <my-nav :commentNum="Number(commentNum)"></my-nav>
 
     <!-- content -->
     <!-- 路由出口: router設定的組件會渲染於此 -->
@@ -35,11 +35,24 @@ export default {
             .catch(error => {
                 console.log(error);
             });
+
+        this.$axios
+            .get("api/ratings")
+            .then(response => {
+                var dataSource = response.data;
+                if (dataSource.code === 0) {
+                    this.commentNum = dataSource.data.comment_num;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
     },
     data() {
         return {
             //header component's data(seller)
-            poiInfo: {}
+            poiInfo: {},
+            commentNum: "0"
         };
     }
 };
