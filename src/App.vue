@@ -9,7 +9,9 @@
 
     <!-- content -->
     <!-- 路由出口: router設定的組件會渲染於此 -->
-    <router-view></router-view>
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 

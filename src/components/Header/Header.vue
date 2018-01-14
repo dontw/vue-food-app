@@ -42,7 +42,7 @@
       <div class="bg-wrapper" :style="content_bg">
       </div>
       <!-- bulletin detail -->
-      <transition name="detail">
+      <transition name="headerDetail">
         <div class="bulletin-detail" v-show="bulletinDetailIsShow">
             <div class="detail-wrapper">
                 <div class="main-wrapper" :style="detail_bg">
@@ -190,7 +190,8 @@ export default {
 }
 
 .header .top-wrapper .more-wrapper .more-bt {
-    float: right;
+    position: absolute;
+    left: 63%;
     width: 20px;
     height: 24px;
     margin-top: 7px;
@@ -408,13 +409,13 @@ export default {
 }
 
 /* transition */
-.detail-enter-active,
-.detail-leave-active {
+.headerDetail-enter-active,
+.headerDetail-leave-active {
     transition: 0.5s all;
 }
 
-.detail-enter,
-.detail-leave-to {
+.headerDetail-enter,
+.headerDetail-leave-to {
     opacity: 0;
 }
 </style>
