@@ -15,6 +15,7 @@
   padding: 16px 0;
   border-bottom: 1px solid #f4f4f4;
 }
+
 .address_left {
   flex: 1;
   background: url("./address.png") no-repeat left center;
@@ -24,6 +25,7 @@
   font-size: 14px;
   line-height: 19px;
 }
+
 .address_right {
   flex: 0 0 60px;
   background: url("./line.png") no-repeat left center;
@@ -36,6 +38,7 @@
   background: url("./phone.png") no-repeat center center;
   background-size: 18px 18px;
 }
+
 .pics_wrapper {
   padding: 10px 0;
   overflow: hidden;
@@ -43,19 +46,19 @@
   white-space: nowrap;
 }
 
-.pics_list {
-}
 .pics_item {
   display: inline-block;
   margin-right: 11px;
   width: 93px;
   height: 75px;
 }
+
 .pics_item img {
   width: 100%;
   height: 100%;
   border-radius: 2px;
 }
+
 .safety_wrapper {
   padding: 15px 14px 15px 25px;
   background: url("./safety.png") no-repeat left center;
@@ -79,6 +82,7 @@
   font-size: 14px;
   border-bottom: 1px solid #f4f4f4;
 }
+
 .shipping_wrapper {
   background: url("./time.png") no-repeat left center;
   background-size: 15px 15px;
@@ -98,16 +102,19 @@
   font-size: 14px;
   border-bottom: 1px solid #f4f4f4;
 }
+
 .poi_server {
   display: inline-block;
   margin-left: 17px;
 }
+
 .poi_server img {
   width: 15px;
   height: 15px;
   margin-right: 6px;
   vertical-align: middle;
 }
+
 .discounts_wrapper {
   padding: 17px 25px 19px 0;
 }
@@ -124,6 +131,7 @@
   width: 15px;
   height: 15px;
 }
+
 .discounts_item .text {
   flex: 1;
   font-size: 14px;
