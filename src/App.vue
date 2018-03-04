@@ -27,7 +27,7 @@ export default {
     },
     created() {
         this.$axios
-            .get("api/goods")
+            .get("static/data/foods.json")
             .then(response => {
                 var dataSource = response.data;
                 if (dataSource.code === 0) {
@@ -39,7 +39,7 @@ export default {
             });
 
         this.$axios
-            .get("api/ratings")
+            .get("static/data/ratings.json")
             .then(response => {
                 var dataSource = response.data;
                 if (dataSource.code === 0) {

@@ -67,7 +67,7 @@ export default {
     },
     created() {
         this.$axios
-            .get("api/seller")
+            .get("static/data/sellers.json")
             .then(response => {
                 if (response.data.code === 0) {
                     this.seller = response.data.data;
